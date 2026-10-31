@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation Manager</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            background: #f8f1e8;
+            color: #49382f;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .manager {
+            width: 100%;
+            max-width: 440px;
+            padding: 32px 24px;
+            background: #fffdf9;
+            border: 1px solid #e5d3b9;
+            border-radius: 18px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            text-align: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 38px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            margin: 0 0 28px;
+            text-align: center;
+            color: #877466;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .option {
+            display: block;
+            margin: 12px 0;
+            padding: 17px;
+            border: 1px solid #dfd0be;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .option:has(input:checked) {
+            border-color: #9a7450;
+            background: #f8efe3;
+        }
+
+        .option input {
+            margin-right: 9px;
+            accent-color: #89633f;
+        }
+
+        .option strong {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .option small {
+            display: block;
+            margin-left: 25px;
+            color: #877466;
+            line-height: 1.6;
+        }
+
+        #generatedLink {
+            width: 100%;
+            margin: 18px 0 12px;
+            padding: 12px;
+            border: 1px solid #dfd0be;
+            border-radius: 8px;
+            background: white;
+            color: #49382f;
+            font-size: 12px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .copy {
+            background: #49382f;
+            color: white;
+        }
+
+        .whatsapp {
+            background: #e0eee2;
+            color: #205c36;
+        }
+
+        #status {
+            min-height: 18px;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="manager">
+        <h1>Wedding Invitations</h1>
+        <p class="subtitle">
+            Choose which ceremonies your guest is invited to.
+        </p>
+
+        <label class="option">
+            <input type="radio" name="invite" value="biye" checked>
+            <strong>Biye</strong>
+            <small>Wedding invitation — first five screens.</small>
+        </label>
+
+        <label class="option">
+            <input type="radio" name="invite" value="both">
+            <strong>Biye + Boubhat</strong>
+            <small>Wedding and reception — all seven screens.</small>
+        </label>
+
+        <input id="generatedLink" type="text" readonly>
+
+        <button class="copy" id="copyButton">
+            Copy invitation link
+        </button>
+
+        <button class="whatsapp" id="whatsappButton">
+            Share on WhatsApp
+        </button>
+
+        <p id="status" aria-live="polite"></p>
+    </main>
+
+    <script>
+        const websiteURL = "https://soinlove.netlify.app/";
+        const linkField = document.getElementById("generatedLink");
+        const status = document.getElementById("status");
+
+        function updateLink() {
+            const selected = document.querySelector(
+                'input[name="invite"]:checked'
+            ).value;
+
+            const url = new URL(websiteURL);
+            url.searchParams.set("invite", selected);
+
+            linkField.value = url.toString();
+            status.textContent = "";
+        }
+
+        document.querySelectorAll('input[name="invite"]')
+            .forEach(radio => {
+                radio.addEventListener("change", updateLink);
+            });
+
+        document.getElementById("copyButton")
+            .addEventListener("click", async () => {
+                try {
+                    await navigator.clipboard.writeText(linkField.value);
+                    status.textContent = "Invitation link copied!";
+                } catch {
+                    linkField.select();
+                    status.textContent =
+                        "Select and copy the link manually.";
+                }
+            });
+
+        
+document.getElementById("whatsappButton")
+    .addEventListener("click", async () => {
+        const message =
+            "We warmly invite you to celebrate with us! ❤️\n\n" +
+            linkField.value;
+
+        const imagePath = "images/whatsapp-invitation.png";
+
+        try {
+            const response = await fetch(imagePath);
+
+            if (!response.ok) {
+                throw new Error("Invitation image not found");
+            }
+
+            const blob = await response.blob();
+
+            const imageFile = new File(
+                [blob],
+                "whatsapp-invitation.png",
+                { type: blob.type || "image/jpeg" }
+            );
+
+            if (
+                navigator.canShare &&
+                navigator.canShare({ files: [imageFile] })
+            ) {
+                await navigator.share({
+                    files: [imageFile],
+                    text: message,
+                    title: "Wedding Invitation"
+                });
+            } else {
+                status.textContent =
+                    "Image sharing is not supported in this browser.";
+            }
+        } catch (error) {
+            if (error.name !== "AbortError") {
+                status.textContent =
+                    "Could not share the image: " + error.message;
+            }
+        }
+    });
+
+
+        updateLink();
+    </script>
+</body>
+</html>
