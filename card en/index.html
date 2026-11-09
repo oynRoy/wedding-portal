@@ -868,31 +868,6 @@ button {
 </section>
 
 <!-- =====================================
-     SCREEN 7 - RECEPTION
-===================================== -->
-
-<section class="screen-six">
-
-    <video
-        id="clip7"
-        muted
-        playsinline
-        preload="auto">
-
-        <source
-            src="videos/reception.mp4"
-            type="video/mp4">
-
-    </video>
-
-    <div class="scroll-hint">
-        <span>Thank you for celebrating with us</span>
-        <span class="scroll-arrow">⌄</span>
-    </div>
-
-</section>
-
-<!-- =====================================
      JAVASCRIPT
 ===================================== -->
 
@@ -1540,26 +1515,17 @@ window.addEventListener("scroll", () => {
     passive: true
 
 });
-
 /* =====================================
-   FINAL VIDEO AND MUSIC STOP
+   SCREEN 6 - STOP MUSIC AFTER VIDEO
 ===================================== */
 
-// Find the last visible section's video.
-// For invite=biye, the reception screen is hidden.
+const screen6Video = $("#clip5");
 
-const lastSection = sections[sections.length - 1];
+if (screen6Video) {
 
-const finalVideo = lastSection
-    ? $("video", lastSection)
-    : null;
+    screen6Video.addEventListener("ended", () => {
 
-if (finalVideo) {
-
-    finalVideo.addEventListener("ended", () => {
-
-        // STOP WEDDING MUSIC ONLY WHEN
-        // THE FINAL VIDEO HAS FINISHED
+        // Stop background wedding music
 
         if (music) {
 
@@ -1569,7 +1535,6 @@ if (finalVideo) {
 
         }
 
-        announce("Thank you for celebrating with us ❤️");
 
     });
 
@@ -1605,5 +1570,6 @@ updateControls();
 })();
 
 </script>
+
 </body>
 </html>
