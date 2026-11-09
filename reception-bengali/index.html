@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="theme-color" content="#211713">
+<meta name="description" content="A wedding invitation celebrating Oyndrila and Souvik.">
+
+<title>Oyndrila & Souvik | Wedding Invitation</title>
+
+<meta property="og:title" content="Oyndrila & Souvik">
+<meta property="og:description" content="Join us in celebrating our wedding.">
+<meta property="og:image" content="https://soinlove.netlify.app/images/whatsapp-invitation.png">
+<meta property="og:url" content="https://soinlove.netlify.app/">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Felipa&family=Tangerine:wght@400;700&family=Cookie&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================
+   GLOBAL SETTINGS
+===================================== */
+
+:root {
+    --gold: #e8c98c;
+    --cream: #fff8ec;
+    --dark: #211713;
+    --brown: #70452e;
+    --dock-height: 72px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5px;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #000;
+    scroll-snap-type: y proximity;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: auto;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    height: 100dvh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+}
+
+section[hidden] {
+    display: none !important;
+}
+
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================
+   ENVELOPE INTRO
+===================================== */
+
+#intro {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    height: 100dvh;
+    overflow: hidden;
+    background: #000;
+}
+
+#intro video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+#introVideo1 {
+    z-index: 1;
+}
+
+#introVideo2 {
+    display: none;
+    z-index: 2;
+}
+
+#sealButton {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+#sealButton::after {
+    /* content: "OPEN"; */
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    background: rgba(30, 20, 15, .35);
+    font: 600 12px Arial, sans-serif;
+    letter-spacing: .2em;
+    transition: .3s;
+}
+
+#sealButton:active::after {
+    transform: scale(.92);
+    background: rgba(30, 20, 15, .7);
+}
+
+/* =====================================
+   SCREEN 1 - INTRO VIDEO
+===================================== */
+
+.hero {
+    position: relative;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =====================================
+   SCREEN 2 - LOVE AND UNION
+===================================== */
+
+.screen-two {
+    position: relative;
+    background: #000;
+}
+
+.screen-two img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #000;
+}
+
+.video-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 1.2s ease;
+    pointer-events: none;
+}
+
+.video-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-screen.video-finished {
+    opacity: 0;
+}
+.screen-three {
+    position: relative;
+    background: #000;
+}
+
+.screen-three video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.choice-hotspot {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 5;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.choice-hotspot-groom {
+    left: 0;
+}
+
+.choice-hotspot-bride {
+    right: 0;
+}
+
+.screen-three video[hidden] {
+    display: none !important;
+}
+
+
+
+/* =====================================
+   SCREEN 5 - INVITATION IMAGE
+===================================== */
+
+.screen-image {
+    background: #000;
+}
+
+.screen-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* =====================================
+   SCREEN 6 - CLOSING MESSAGE
+===================================== */
+
+.screen-five {
+    background: #000;
+}
+
+.screen-five video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 1;
+}
+
+.screen-five-message {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-family: "Felipa", serif;
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
+    line-height: 1.7;
+    text-shadow: 0 2px 12px rgba(0,0,0,.7);
+    transition: opacity 1s ease;
+}
+
+/* =====================================
+   SCREEN 7 - RECEPTION
+===================================== */
+
+.screen-six {
+    background: #000;
+}
+
+.screen-six video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =====================================
+   SCROLL INDICATORS
+===================================== */
+
+.scroll-hint {
+    position: absolute;
+    bottom: calc(var(--dock-height) + 25px);
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    pointer-events: none;
+}
+
+.scroll-arrow {
+    font-size: 28px;
+    line-height: 1;
+    animation: arrowBounce 1.8s ease-in-out infinite;
+}
+
+#screen1 .scroll-hint,
+.screen-five .scroll-hint,
+.screen-six .scroll-hint {
+    color: var(--gold);
+}
+
+.screen-two .scroll-hint {
+    color: white;
+}
+
+.screen-three .scroll-hint,
+.screen-four .scroll-hint {
+    color: var(--brown);
+}
+
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+/* =====================================
+   MOBILE PROGRESS BAR
+===================================== */
+
+.wedding-progress {
+    position: fixed;
+    top: env(safe-area-inset-top, 0px);
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 100;
+    background: rgba(255,255,255,.2);
+    pointer-events: none;
+}
+
+.wedding-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--gold);
+    transition: width .25s ease;
+}
+
+/* =====================================
+   MOBILE NAVIGATION DOCK
+===================================== */
+
+.wedding-controls {
+    position: fixed;
+    z-index: 101;
+    left: 50%;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: min(520px, calc(100% - 24px));
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    background: rgba(30,20,15,.86);
+    box-shadow: 0 8px 28px rgba(0,0,0,.3);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.wedding-controls button {
+    flex: 1;
+    min-width: 0;
+    min-height: 46px;
+    padding: 8px;
+    border: 1px solid rgba(245,223,176,.25);
+    border-radius: 14px;
+    background: rgba(255,255,255,.07);
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: .2s ease;
+}
+
+.wedding-controls button:active {
+    transform: scale(.95);
+}
+
+.wedding-controls button:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+.wedding-controls .control-primary {
+    color: #261910;
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.wedding-controls button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* =====================================
+   STATUS MESSAGE
+===================================== */
+
+.wedding-status {
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    bottom: calc(var(--dock-height) + 28px);
+    transform: translateX(-50%);
+    max-width: calc(100% - 32px);
+    padding: 9px 16px;
+    border-radius: 30px;
+    color: white;
+    background: rgba(30,20,15,.85);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.wedding-status.visible {
+    opacity: 1;
+}
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 600px) {
+
+    :root {
+        --dock-height: 72px;
+    }
+
+    #sealButton {
+        width: 82px;
+        height: 82px;
+    }
+
+    .hero video,
+    .screen-three video,
+    .screen-four video,
+    .screen-five video {
+        object-fit: contain;
+    }
+
+    .screen-two img {
+        object-fit: contain;
+    }
+
+    .screen-two .video-screen video {
+        object-fit: contain;
+    }
+
+    .screen-six video {
+        object-fit: cover;
+    }
+
+    .scroll-hint {
+        bottom: calc(var(--dock-height) + 22px);
+        font-size: 10px;
+    }
+
+    .scroll-arrow {
+        font-size: 24px;
+    }
+
+    .wedding-controls {
+        gap: 5px;
+        padding: 6px;
+        border-radius: 18px;
+    }
+
+    .wedding-controls button {
+        min-height: 46px;
+        padding: 7px 4px;
+        font-size: 11px;
+    }
+
+    .screen-five-message {
+        padding: 24px;
+        font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+        line-height: 1.55;
+    }
+}
+
+/* LANDSCAPE PHONES */
+
+@media (max-height: 620px) and (orientation: landscape) {
+
+    .scroll-hint {
+        display: none;
+    }
+
+    .wedding-controls {
+        bottom: 6px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     PROGRESS INDICATOR
+===================================== -->
+
+<div class="wedding-progress" aria-hidden="true">
+    <div
+        class="wedding-progress-fill"
+        id="weddingProgressFill">
+    </div>
+</div>
+
+<!-- STATUS MESSAGE -->
+
+<div
+    class="wedding-status"
+    id="weddingStatus"
+    role="status"
+    aria-live="polite">
+</div>
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<nav class="wedding-controls" aria-label="Invitation navigation">
+
+    <button
+        type="button"
+        id="previousSection"
+        aria-label="Previous section">
+        ‹ Back
+    </button>
+
+    <button
+        type="button"
+        id="replayVideo"
+        aria-label="Replay current video">
+        ↻ Replay
+    </button>
+
+    <button
+        type="button"
+        id="nextSection"
+        class="control-primary"
+        aria-label="Next section">
+        Next ›
+    </button>
+
+</nav>
+
+<!-- =====================================
+     BACKGROUND WEDDING MUSIC
+===================================== -->
+
+<audio id="weddingMusic" loop preload="auto">
+    <source src="music/wedding-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- =====================================
+     ENVELOPE INTRO
+===================================== -->
+
+<section id="intro">
+
+    <video
+        id="introVideo1"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/envelope-idle.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <video
+        id="introVideo2"
+        muted
+        playsinline
+        preload="auto"
+        style="display:none">
+
+        <source
+            src="videos/envelope-opening.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <button
+        id="sealButton"
+        aria-label="Open wedding invitation">
+    </button>
+
+</section>
+
+<!-- =====================================
+     SCREEN 1 - INTRO VIDEO
+===================================== -->
+
+<section id="screen1" class="hero">
+
+    <video
+        id="introVideo"
+        muted
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/intro_clip.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <div class="scroll-hint">
+        <span>Scroll to discover</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
+
+</section>
+
+<!-- =====================================
+     SCREEN 2 - LOVE AND UNION
+===================================== -->
+
+<section class="screen-two">
+
+    <div class="video-screen">
+
+        <video
+            id="clip2"
+            muted
+            playsinline
+            preload="auto">
+
+            <source
+                src="videos/clip2.mp4"
+                type="video/mp4">
+
+        </video>
+
+    </div>
+
+    <img
+        src="images/love-union.png"
+        alt="Oyndrila and Souvik">
+
+    <div class="scroll-hint">
+        <span>Scroll to discover</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
+
+</section>
+<!-- =====================================
+     SCREEN 3 - GROOM / BRIDE SELECTION
+===================================== -->
+
+<section id="screen3" class="screen-three">
+
+    <!-- BACKGROUND SELECTION VIDEO -->
+
+    <video
+        id="characterChoiceVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/bride-groom-choice.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <!-- LEFT SIDE - GROOM -->
+
+    <button
+        type="button"
+        class="choice-hotspot choice-hotspot-groom"
+        id="chooseGroom"
+        aria-label="Open groom introduction">
+    </button>
+
+    <!-- RIGHT SIDE - BRIDE -->
+
+    <button
+        type="button"
+        class="choice-hotspot choice-hotspot-bride"
+        id="chooseBride"
+        aria-label="Open bride introduction">
+    </button>
+
+    <!-- GROOM VIDEO -->
+
+    <video
+        id="groomVideo"
+        muted
+        playsinline
+        preload="auto"
+        hidden>
+
+        <source
+            src="videos/clip5.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <!-- BRIDE VIDEO -->
+
+    <video
+        id="brideVideo"
+        muted
+        playsinline
+        preload="auto"
+        hidden>
+
+        <source
+            src="videos/clip4.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <div class="scroll-hint">
+        <span>Scroll to discover</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
+
+</section>
+
+<!-- =====================================
+     SCREEN 5 - WEDDING INVITATION
+===================================== -->
+
+<section class="screen-image">
+
+    <img
+        src="images/invitation_biye.jpg"
+        alt="Wedding invitation">
+
+    <div class="scroll-hint">
+        <span>Swipe to continue</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
+
+</section>
+
+<!-- =====================================
+     SCREEN 6 - CLOSING MESSAGE
+===================================== -->
+
+<section class="screen-five">
+
+    <video
+        id="clip5"
+        muted
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/clip6.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <div class="screen-five-message">
+
+        <div>
+            Join us in celebrating this auspicious occasion
+        </div>
+
+        <div>
+            with our families,
+        </div>
+
+        <div>
+            and shower the bride and groom
+        </div>
+
+        <div>
+            with your love and blessings
+        </div>
+
+        <div>
+            as they begin their journey together.
+        </div>
+
+    </div>
+
+    <div class="scroll-hint">
+        <span>Scroll to continue</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
+
+</section>
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+(() => {
+
+"use strict";
+
+/* =====================================
+   ELEMENTS
+===================================== */
+
+const $ = (selector, root = document) =>
+    root.querySelector(selector);
+
+const $$ = (selector, root = document) =>
+    [...root.querySelectorAll(selector)];
+
+const music = $("#weddingMusic");
+
+const introIdle = $("#introVideo1");
+const introOpen = $("#introVideo2");
+
+const sealButton = $("#sealButton");
+
+const progressFill = $("#weddingProgressFill");
+const status = $("#weddingStatus");
+
+const previousButton = $("#previousSection");
+const nextButton = $("#nextSection");
+const replayButton = $("#replayVideo");
+
+let activeIndex = 0;
+let statusTimer = null;
+let closingTimer = null;
+
+/* =====================================
+   INVITATION TYPE
+===================================== */
+
+const inviteType =
+    new URLSearchParams(location.search).get("invite");
+
+if (inviteType === "biye") {
+
+    $$(".screen-six, .screen-seven").forEach(section => {
+        section.hidden = true;
+    });
+
+}
+
+/* =====================================
+   VISIBLE SECTIONS
+===================================== */
+
+const sections = $$("body > section")
+    .filter(section => !section.hidden);
+
+/* =====================================
+   STATUS MESSAGE
+===================================== */
+
+function announce(message) {
+
+    status.textContent = message;
+
+    status.classList.add("visible");
+
+    clearTimeout(statusTimer);
+
+    statusTimer = setTimeout(() => {
+
+        status.classList.remove("visible");
+
+    }, 2500);
+
+}
+
+/* =====================================
+   SAFE VIDEO PLAYBACK
+===================================== */
+
+function safePlay(video) {
+
+    if (!video) return;
+
+    const promise = video.play();
+
+    if (promise && promise.catch) {
+
+        promise.catch(() => {
+
+            announce("Tap Replay to play the video");
+
+        });
+
+    }
+
+}
+
+/* =====================================
+   PROGRESS INDICATOR
+===================================== */
+
+function updateControls() {
+
+    const progress = sections.length > 1
+        ? (activeIndex / (sections.length - 1)) * 100
+        : 0;
+
+    progressFill.style.width = progress + "%";
+
+    previousButton.disabled = activeIndex <= 0;
+
+    nextButton.disabled =
+        activeIndex >= sections.length - 1;
+
+}
+
+/* =====================================
+   SECTION NAVIGATION
+===================================== */
+
+function goToSection(index) {
+
+    const safeIndex = Math.max(
+        0,
+        Math.min(index, sections.length - 1)
+    );
+
+    const target = sections[safeIndex];
+
+    if (!target) return;
+
+    target.scrollIntoView({
+
+        behavior: "smooth",
+        block: "start"
+
+    });
+
+    activeIndex = safeIndex;
+
+    updateControls();
+
+}
+/* =====================================
+   GROOM / BRIDE SELECTION
+===================================== */
+
+// Use the EXACT IDs from your HTML
+
+const characterChoiceVideo = $("#characterChoiceVideo");
+
+const groomVideo = $("#groomVideo");
+
+const brideVideo = $("#brideVideo");
+
+const groomButton = $("#chooseGroom");
+
+const brideButton = $("#chooseBride");
+
+// Track which introduction is currently open
+
+let selectedCharacter = null;
+
+
+/* =====================================
+   OPEN GROOM OR BRIDE
+===================================== */
+
+function openCharacter(video) {
+
+    if (!video) return;
+
+    // Remember selected introduction
+
+    selectedCharacter = video;
+
+    // Stop selection video
+
+    characterChoiceVideo.pause();
+
+    characterChoiceVideo.hidden = true;
+
+    // Hide selection buttons
+
+    groomButton.hidden = true;
+
+    brideButton.hidden = true;
+
+    // Show selected introduction
+
+    video.hidden = false;
+
+    video.currentTime = 0;
+
+    safePlay(video);
+
+}
+
+
+/* =====================================
+   GROOM BUTTON - LEFT
+===================================== */
+
+groomButton.addEventListener("click", () => {
+
+    openCharacter(groomVideo);
+
+});
+
+
+/* =====================================
+   BRIDE BUTTON - RIGHT
+===================================== */
+
+brideButton.addEventListener("click", () => {
+
+    openCharacter(brideVideo);
+
+});
+
+
+/* =====================================
+   RETURN TO SELECTION VIDEO
+===================================== */
+
+function returnToCharacterChoice() {
+
+    // Stop groom video
+
+    groomVideo.pause();
+
+    groomVideo.currentTime = 0;
+
+    groomVideo.hidden = true;
+
+    // Stop bride video
+
+    brideVideo.pause();
+
+    brideVideo.currentTime = 0;
+
+    brideVideo.hidden = true;
+
+    // Show selection video
+
+    characterChoiceVideo.hidden = false;
+
+    // Show both clickable areas
+
+    groomButton.hidden = false;
+
+    brideButton.hidden = false;
+
+    // Reset selection state
+
+    selectedCharacter = null;
+
+    // Restart selection video
+
+    characterChoiceVideo.currentTime = 0;
+
+    safePlay(characterChoiceVideo);
+
+}
+
+
+/* =====================================
+   BACK BUTTON
+===================================== */
+
+previousButton.addEventListener("click", () => {
+
+    // First Back: return to groom/bride selection
+
+    if (selectedCharacter !== null) {
+
+        returnToCharacterChoice();
+
+        return;
+
+    }
+
+    // Second Back: previous wedding section
+
+    goToSection(activeIndex - 1);
+
+});
+
+
+/* =====================================
+   NEXT BUTTON
+===================================== */
+
+nextButton.addEventListener("click", () => {
+
+    // If an introduction is open, stop it
+
+    if (selectedCharacter !== null) {
+
+        selectedCharacter.pause();
+
+        selectedCharacter.currentTime = 0;
+
+        selectedCharacter.hidden = true;
+
+        characterChoiceVideo.hidden = true;
+
+        groomButton.hidden = true;
+
+        brideButton.hidden = true;
+
+        selectedCharacter = null;
+
+    }
+
+    goToSection(activeIndex + 1);
+
+});
+/* =====================================
+   ENVELOPE OPENING
+===================================== */
+
+sealButton.addEventListener("click", () => {
+
+    introIdle.pause();
+
+    introIdle.style.display = "none";
+
+    introOpen.style.display = "block";
+
+    introOpen.currentTime = 0;
+
+    safePlay(introOpen);
+
+    // START MUSIC AFTER GUEST OPENS ENVELOPE
+
+    if (music) {
+
+        music.volume = 0.65;
+
+        music.currentTime = 0;
+
+        music.play().catch(() => {
+
+            announce("Music playback was blocked by your browser");
+
+        });
+
+    }
+
+});
+
+// Move to first screen after envelope animation
+
+introOpen.addEventListener("ended", () => {
+
+    goToSection(1);
+
+});
+
+/* =====================================
+   CURRENT VIDEO
+===================================== */
+
+function getCurrentVideo() {
+
+    const section = sections[activeIndex];
+
+    if (!section) return null;
+
+    const videos = $$("video", section);
+
+    return videos.find(video => video.offsetParent !== null)
+        || videos[0]
+        || null;
+
+}
+
+/* =====================================
+   REPLAY BUTTON
+===================================== */
+
+replayButton.addEventListener("click", () => {
+
+    const video = getCurrentVideo();
+
+    if (!video) {
+
+        announce("No video on this screen");
+
+        return;
+
+    }
+
+    video.currentTime = 0;
+
+    safePlay(video);
+
+    announce("Replaying video");
+
+});
+
+/* =====================================
+   VIDEO OBSERVATION
+===================================== */
+
+const sectionVideos = new Map();
+
+sections.forEach(section => {
+
+    const videos = $$("video", section);
+
+    if (videos.length) {
+
+        sectionVideos.set(section, videos);
+
+    }
+
+});
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (
+            !entry.isIntersecting ||
+            entry.intersectionRatio < 0.55
+        ) {
+            return;
+        }
+
+        const section = entry.target;
+
+        activeIndex = sections.indexOf(section);
+
+        updateControls();
+
+        // PAUSE VIDEOS IN OTHER SECTIONS
+
+        sections.forEach(otherSection => {
+
+            if (otherSection === section) return;
+
+            const videos =
+                sectionVideos.get(otherSection) || [];
+
+            videos.forEach(video => video.pause());
+
+        });
+
+        // PLAY CURRENT SECTION VIDEOS
+
+        const videos =
+            sectionVideos.get(section) || [];
+
+        videos.forEach(video => {
+
+            if (
+                video.hidden ||
+                video === introIdle ||
+                video === introOpen
+            ) {
+                return;
+            }
+
+            // Reset love and union overlay
+
+            if (video.id === "clip2") {
+
+                $(".video-screen", section)
+                    ?.classList.remove("video-finished");
+
+            }
+
+            video.currentTime = 0;
+
+            safePlay(video);
+
+        });
+
+        // INTRO VIDEO
+
+        if (section.id === "screen1") {
+
+            const intro = $("#introVideo");
+
+            if (intro) {
+
+                intro.currentTime = 0;
+
+                safePlay(intro);
+
+            }
+
+        }
+
+    });
+
+}, {
+
+    threshold: [0.55, 0.75]
+
+});
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+/* =====================================
+   LOVE AND UNION VIDEO
+===================================== */
+
+$("#clip2").addEventListener("ended", () => {
+
+    $(".video-screen")
+        ?.classList.add("video-finished");
+
+});
+
+/* =====================================
+   CLOSING MESSAGE
+===================================== */
+
+const closingSection = $(".screen-five");
+
+const closingVideo = $("#clip5");
+
+const closingMessage =
+    $(".screen-five-message");
+
+if (closingSection && closingVideo && closingMessage) {
+
+    const closingObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                clearTimeout(closingTimer);
+
+                closingVideo.pause();
+
+                closingVideo.currentTime = 0;
+
+                closingMessage.style.opacity = "1";
+
+                // Display message for 4.5 seconds
+
+                closingTimer = setTimeout(() => {
+
+                    if (
+                        entry.target.getBoundingClientRect().top <
+                        window.innerHeight * 0.4
+                    ) {
+
+                        closingMessage.style.opacity = "0";
+
+                        safePlay(closingVideo);
+
+                    }
+
+                }, 4500);
+
+            } else {
+
+                clearTimeout(closingTimer);
+
+                closingVideo.pause();
+
+            }
+
+        });
+
+    }, {
+
+        threshold: 0.55
+
+    });
+
+    closingObserver.observe(closingSection);
+
+}
+
+/* =====================================
+   REMOVE DUPLICATE SCROLL HINTS
+===================================== */
+
+const hints = $$(".screen-two .scroll-hint");
+
+hints.slice(1).forEach(hint => hint.remove());
+
+/* =====================================
+   UPDATE PROGRESS WHEN SCROLLING
+===================================== */
+
+let scrollFrame = null;
+
+window.addEventListener("scroll", () => {
+
+    if (scrollFrame) return;
+
+    scrollFrame = requestAnimationFrame(() => {
+
+        scrollFrame = null;
+
+        const viewportCenter =
+            window.innerHeight / 2;
+
+        let nearest = 0;
+
+        let nearestDistance = Infinity;
+
+        sections.forEach((section, index) => {
+
+            const rect = section.getBoundingClientRect();
+
+            const distance = Math.abs(
+                rect.top + rect.height / 2 - viewportCenter
+            );
+
+            if (distance < nearestDistance) {
+
+                nearestDistance = distance;
+
+                nearest = index;
+
+            }
+
+        });
+
+        activeIndex = nearest;
+
+        updateControls();
+
+    });
+
+}, {
+
+    passive: true
+
+});
+/* =====================================
+   SCREEN 6 - STOP MUSIC AFTER VIDEO
+===================================== */
+
+const screen6Video = $("#clip5");
+
+if (screen6Video) {
+
+    screen6Video.addEventListener("ended", () => {
+
+        // Stop background wedding music
+
+        if (music) {
+
+            music.pause();
+
+            music.currentTime = 0;
+
+        }
+
+
+    });
+
+}
+
+/* =====================================
+   PAUSE VIDEOS WHEN PAGE IS HIDDEN
+===================================== */
+
+document.addEventListener("visibilitychange", () => {
+
+    if (document.hidden) {
+
+        sections.forEach(section => {
+
+            const videos =
+                sectionVideos.get(section) || [];
+
+            videos.forEach(video => video.pause());
+
+        });
+
+    }
+
+});
+
+/* =====================================
+   INITIALISE
+===================================== */
+
+updateControls();
+
+})();
+
+</script>
+
+</body>
+</html>
