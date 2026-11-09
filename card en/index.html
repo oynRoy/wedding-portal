@@ -1,499 +1,380 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color" content="#211713">
+<meta name="description" content="A wedding invitation celebrating Oyndrila and Souvik.">
 
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Felipa&family=Tangerine:wght@400;700&family=Cookie&display=swap" rel="stylesheet">
+<title>Oyndrila & Souvik | Wedding Invitation</title>
 
-  <title>SO Wedding</title>
-  <meta property="og:title" content="Oyndrila & Souvik">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="https://soinlove.netlify.app/images/whatsapp-invitation.png">
-  <meta property="og:url" content="https://soinlove.netlify.app/">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Oyndrila & Souvik">
+<meta property="og:description" content="Join us in celebrating our wedding.">
+<meta property="og:image" content="https://soinlove.netlify.app/images/whatsapp-invitation.png">
+<meta property="og:url" content="https://soinlove.netlify.app/">
+<meta property="og:type" content="website">
 
-  <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Felipa&family=Tangerine:wght@400;700&family=Cookie&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-    
-    html {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
+<style>
 
-    body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
+/* =====================================
+   GLOBAL SETTINGS
+===================================== */
 
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-        overscroll-behavior-y: contain;
-    }
+:root {
+    --gold: #e8c98c;
+    --cream: #fff8ec;
+    --dark: #211713;
+    --brown: #70452e;
+    --dock-height: 72px;
+}
 
-    section {
-        width: 100%;
-        height: 100vh;
-        height: 100svh;
-        min-height: 100svh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        overflow: hidden;
-        position: relative;
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5px;
+}
 
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #000;
 
-    #intro {
-        position: relative;
-        width: 100%;
-        height: 100dvh;
-        overflow: hidden;
-    }
+    scroll-snap-type: y proximity;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: auto;
+}
 
-    #intro video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        background: #000;
-    }
+section {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    height: 100dvh;
+    min-height: 100svh;
+    min-height: 100dvh;
 
-    #introVideo1 {
-        display: block;
-        z-index: 1;
-    }
+    overflow: hidden;
 
-    #introVideo2 {
-        display: none;
-        z-index: 2;
-    }
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+}
 
-    #sealButton {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        left: 50%;
-        top: 60%;
-        transform: translate(-50%, -50%);
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 10;
-    }
+section[hidden] {
+    display: none !important;
+}
 
-    /* =====================================================
-       SCREEN 1 — INTRO
-    ===================================================== */
+video {
+    display: block;
+    max-width: 100%;
+}
 
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100dvh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #000;
-    }
+button {
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
 
-    .hero video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      background: #000;
-      z-index: 0;
-    }
+/* =====================================
+   ENVELOPE INTRO
+===================================== */
 
+#intro {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    height: 100dvh;
+    overflow: hidden;
+    background: #000;
+}
 
-    /* =====================================================
-       SCREEN 2 — LOVE AND UNION
-    ===================================================== */
+#intro video {
+    position: absolute;
+    inset: 0;
 
-    .screen-two {
-      position: relative;
-      width: 100%;
-      height: 100dvh;
-      overflow: hidden;
-      background: #000;
-    }
+    width: 100%;
+    height: 100%;
 
-    .video-screen {
-      position: absolute;
-      inset: 0;
+    object-fit: contain;
+    background: #000;
+}
 
-      z-index: 2;
+#introVideo1 {
+    z-index: 1;
+}
 
-      opacity: 1;
+#introVideo2 {
+    display: none;
+    z-index: 2;
+}
 
-      transition: opacity 1.2s ease;
-    }
+#sealButton {
+    position: absolute;
 
-    .video-screen video {
-      width: 100%;
-      height: 100%;
+    width: 90px;
+    height: 90px;
 
-      object-fit: cover;
-      object-position: center;
+    left: 50%;
+    top: 60%;
 
-      display: block;
-    }
+    transform: translate(-50%, -50%);
 
-    .video-screen.video-finished {
-      opacity: 0;
-    }
+    z-index: 10;
 
-    .screen-two {
-  position: relative;
-  width: 100%;
-  height: 100dvh;
-  overflow: hidden;
-  background: #000;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+#sealButton::after {
+    content: "OPEN";
+
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    color: var(--gold);
+    background: rgba(30, 20, 15, .35);
+
+    font: 600 12px Arial, sans-serif;
+    letter-spacing: .2em;
+
+    transition: .3s;
+}
+
+#sealButton:active::after {
+    transform: scale(.92);
+    background: rgba(30, 20, 15, .7);
+}
+
+/* =====================================
+   SCREEN 1 - INTRO VIDEO
+===================================== */
+
+.hero {
+    position: relative;
+    background: #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =====================================
+   SCREEN 2 - LOVE AND UNION
+===================================== */
+
+.screen-two {
+    position: relative;
+    background: #000;
 }
 
 .screen-two img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: #000;
 }
 
-    .scroll-two {
-      position: absolute;
-      bottom: 35px;
+.video-screen {
+    position: absolute;
+    inset: 0;
 
-      font-family: "Montserrat", sans-serif;
-      font-size: 1.5rem;
+    z-index: 2;
 
-      animation: float-two 2s ease-in-out infinite;
-    }
+    opacity: 1;
+    transition: opacity 1.2s ease;
 
-    @keyframes float-two {
+    pointer-events: none;
+}
 
-      0%,
-      100% {
-        transform: translateY(0);
-      }
+.video-screen video {
+    width: 100%;
+    height: 100%;
 
-      50% {
-        transform: translateY(-8px);
-      }
+    object-fit: cover;
+    object-position: center;
+}
 
-    }
+.video-screen.video-finished {
+    opacity: 0;
+}
 
+/* =====================================
+   SCREEN 3 - BRIDE
+===================================== */
 
-    /* =====================================================
-       SCREEN 3 — BRIDE
-    ===================================================== */
+.screen-three {
+    background: #ffd699;
+}
 
-    .screen-three {
-      position: relative;
-      width: 100%;
-      height: 100dvh;
-      overflow: hidden;
-      background: #ffd699;
-    }
+.screen-three video {
+    width: 100%;
+    height: 100%;
 
-    .screen-three video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-    }
+    object-fit: contain;
+    object-position: center;
+}
 
+/* =====================================
+   SCREEN 4 - GROOM
+===================================== */
 
-    /* =====================================================
-       SCREEN 4 — GROOM
-    ===================================================== */
+.screen-four {
+    background: #ffd699;
+}
 
-   .screen-four {
-      position: relative;
-      width: 100%;
-      height: 100dvh;
-      overflow: hidden;
-      background: #ffd699;
-    }
+.screen-four video {
+    width: 100%;
+    height: 100%;
 
-    .screen-four video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-    }
+    object-fit: contain;
+    object-position: center;
+}
 
+/* =====================================
+   SCREEN 5 - INVITATION IMAGE
+===================================== */
 
-    /* =====================================================
-       SCREEN 5
-    ===================================================== */
+.screen-image {
+    background: #000;
+}
 
-    .screen-five {
-      position: relative;
+.screen-image img {
+    width: 100%;
+    height: 100%;
 
-      width: 100%;
-      height: 100dvh;
+    object-fit: contain;
+    object-position: center;
 
-      overflow: hidden;
+    display: block;
+}
 
-      background: #000;
-    }
+/* =====================================
+   SCREEN 6 - CLOSING MESSAGE
+===================================== */
 
-    .screen-five video {
-      position: absolute;
+.screen-five {
+    background: #000;
+}
 
-      inset: 0;
+.screen-five video {
+    position: absolute;
+    inset: 0;
 
-      width: 100%;
-      height: 100%;
+    width: 100%;
+    height: 100%;
 
-      object-fit: cover;
-      object-position: center;
+    object-fit: contain;
+    object-position: center;
 
-      display: block;
+    z-index: 1;
+}
 
-      z-index: 1;
-    }
+.screen-five-message {
+    position: absolute;
+    inset: 0;
 
-    .screen-five-message {
-      position: absolute;
+    z-index: 2;
 
-      inset: 0;
+    display: flex;
+    flex-direction: column;
 
-      z-index: 2;
+    justify-content: center;
+    align-items: center;
 
-      display: flex;
+    padding: 30px;
 
-      flex-direction: column;
+    text-align: center;
 
-      justify-content: center;
-      align-items: center;
+    color: white;
 
-      text-align: center;
+    font-family: "Felipa", serif;
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
 
-      padding: 30px;
+    line-height: 1.7;
 
-      color: white;
+    text-shadow: 0 2px 12px rgba(0,0,0,.7);
 
-      font-family: "Felipa", serif;
+    transition: opacity 1s ease;
+}
 
-      font-size: 1.6rem;
+/* =====================================
+   SCREEN 7 - RECEPTION
+===================================== */
 
-      line-height: 1.6;
+.screen-six {
+    background: #000;
+}
 
-      opacity: 1;
+.screen-six video {
+    width: 100%;
+    height: 100%;
 
-      transition: opacity 1s ease;
-    }
+    object-fit: cover;
+    object-position: center;
+}
 
+/* =====================================
+   SCROLL INDICATORS
+===================================== */
 
-    /* =====================================================
-       MOBILE
-    ===================================================== */
-
-    @media (max-width: 600px) {
-
-      /* SCREEN 1 */
-
-      .hero video {
-        object-fit: cover;
-        object-position: center;
-      }
-
-
-      /* SCREEN 2 */
-
-      .video-screen {
-        width: 100%;
-        height: 100%;
-      }
-
-      .video-screen video {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-        margin: 0 auto;
-      }
-
-      .small-heading {
-        font-size: 1rem;
-
-        letter-spacing: 0.25em;
-      }
-
-      .curved-text {
-        font-size: clamp(3.2rem, 13vw, 5rem);
-
-        margin: 15px 0;
-      }
-
-      .couple-names {
-        font-size: 2.3rem;
-
-        margin-top: 15px;
-      }
-
-      .scroll-two {
-        bottom: 25px;
-
-        font-size: 1.2rem;
-      }
-
-
-      /* SCREEN 3 — BRIDE */
-
-      .bride-text {
-        top: 6%;
-
-        width: 94%;
-      }
-
-      .bride-heading {
-        font-size: 0.9rem;
-
-        letter-spacing: 0.25em;
-      }
-
-      .bride-name {
-        font-size: clamp(4rem, 17vw, 6rem);
-      }
-
-      .bride-family {
-        margin-top: 20px;
-
-        font-size: 1.65rem;
-
-        line-height: 1.4;
-      }
-
-      .bride-video {
-        width: 100%;
-
-        height: 43%;
-
-        bottom: 45px;
-      }
-
-      .bride-video video {
-        width: 100%;
-        height: 100%;
-
-        object-fit: contain;
-
-        object-position: center bottom;
-      }
-
-      .scroll-three {
-        bottom: 12px;
-
-        font-size: 0.85rem;
-      }
-
-
-      /* SCREEN 4 — GROOM */
-
-      .groom-text {
-        top: 6%;
-
-        width: 94%;
-      }
-
-      .groom-heading {
-        font-size: 0.9rem;
-
-        letter-spacing: 0.25em;
-      }
-
-      .groom-name {
-        font-size: clamp(4rem, 17vw, 6rem);
-      }
-
-      .groom-family {
-        margin-top: 20px;
-
-        font-size: 1.65rem;
-
-        line-height: 1.4;
-      }
-
-      .groom-video {
-        width: 100%;
-
-        height: 43%;
-
-        bottom: 45px;
-      }
-
-      .groom-video video {
-        width: 100%;
-        height: 100%;
-
-        object-fit: contain;
-
-        object-position: center bottom;
-      }
-
-      .scroll-four {
-        bottom: 12px;
-
-        font-size: 0.85rem;
-      }
-
-
-      /* SCREEN 5 */
-
-      .screen-five video {
-        object-fit: contain;
-        object-position: center;
-      }
-
-      .screen-five-message {
-        padding: 25px;
-
-        font-size: 1.25rem;
-
-        line-height: 1.5;
-      }
-
-    }
-
-    
-/* Base scroll indicator */
 .scroll-hint {
     position: absolute;
-    bottom: 24px;
+
+    bottom: calc(var(--dock-height) + 25px);
     left: 0;
+
     width: 100%;
+
     z-index: 20;
 
     display: flex;
     flex-direction: column;
+
     align-items: center;
-    gap: 4px;
+    gap: 5px;
 
     font-family: "Montserrat", sans-serif;
+
     font-size: 12px;
     font-weight: 500;
+
     letter-spacing: 1.5px;
 
     pointer-events: none;
@@ -502,691 +383,1133 @@
 .scroll-arrow {
     font-size: 28px;
     line-height: 1;
+
     animation: arrowBounce 1.8s ease-in-out infinite;
 }
 
-/* Screen 1 — Intro: soft gold */
-#screen1 .scroll-hint {
-    color: #f5dfb0;
+#screen1 .scroll-hint,
+.screen-five .scroll-hint,
+.screen-six .scroll-hint {
+    color: var(--gold);
 }
 
-/* Screen 2 — Love & Union: elegant ivory */
 .screen-two .scroll-hint {
-    color: black;
+    color: white;
 }
 
-/* Screen 3 — Bride: warm brown */
-.screen-three .scroll-hint {
-    color: #70452e;
-}
-
-/* Screen 4 — Groom: deep brown */
+.screen-three .scroll-hint,
 .screen-four .scroll-hint {
-    color: #70452e;
-}
-
-/* Screen 5 — Final message: soft gold */
-.screen-five .scroll-hint {
-    color: #f5dfb0;
+    color: var(--brown);
 }
 
 @keyframes arrowBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(5px); }
-}
-
-@media (max-width: 600px) {
-    .scroll-hint {
-        bottom: 18px;
-        font-size: 11px;
+    0%, 100% {
+        transform: translateY(0);
     }
 
-    .scroll-arrow {
-        font-size: 25px;
+    50% {
+        transform: translateY(7px);
     }
 }
 
+/* =====================================
+   MOBILE PROGRESS BAR
+===================================== */
 
-/* wedding invitation */
+.wedding-progress {
+    position: fixed;
 
-.screen-image {
-    position: relative;
+    top: env(safe-area-inset-top, 0px);
+    left: 0;
+
     width: 100%;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
-    background: #000;
+    height: 3px;
+
+    z-index: 100;
+
+    background: rgba(255,255,255,.2);
+
+    pointer-events: none;
 }
 
-.screen-image img {
-    width: 100%;
+.wedding-progress-fill {
+    width: 0%;
     height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+
+    background: var(--gold);
+
+    transition: width .25s ease;
 }
 
+/* =====================================
+   MOBILE NAVIGATION DOCK
+===================================== */
 
-/* SCREEN 6 — VIDEO */
+.wedding-controls {
+    position: fixed;
 
-.screen-six {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
-    background: #000;
+    z-index: 101;
+
+    left: 50%;
+    bottom: max(10px, env(safe-area-inset-bottom));
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: min(520px, calc(100% - 24px));
+
+    padding: 8px;
+
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+
+    background: rgba(30,20,15,.86);
+
+    box-shadow: 0 8px 28px rgba(0,0,0,.3);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
-.screen-six video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+.wedding-controls button {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 46px;
+
+    padding: 8px;
+
+    border: 1px solid rgba(245,223,176,.25);
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.07);
+
+    color: var(--cream);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    touch-action: manipulation;
+
+    transition: .2s ease;
 }
 
-.screen-six .scroll-hint {
-    color: #f5dfb0;
+.wedding-controls button:active {
+    transform: scale(.95);
 }
+
+.wedding-controls button:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+.wedding-controls .control-primary {
+    color: #261910;
+
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.wedding-controls button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* =====================================
+   STATUS MESSAGE
+===================================== */
+
+.wedding-status {
+    position: fixed;
+
+    z-index: 99;
+
+    left: 50%;
+    bottom: calc(var(--dock-height) + 28px);
+
+    transform: translateX(-50%);
+
+    max-width: calc(100% - 32px);
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    color: white;
+    background: rgba(30,20,15,.85);
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    text-align: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity .3s ease;
+}
+
+.wedding-status.visible {
+    opacity: 1;
+}
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
 
 @media (max-width: 600px) {
+
+    :root {
+        --dock-height: 72px;
+    }
+
+    #sealButton {
+        width: 82px;
+        height: 82px;
+    }
+
+    .hero video,
+    .screen-three video,
+    .screen-four video,
+    .screen-five video {
+        object-fit: contain;
+    }
+
+    .screen-two img {
+        object-fit: contain;
+    }
+
+    .screen-two .video-screen video {
+        object-fit: contain;
+    }
+
     .screen-six video {
         object-fit: cover;
     }
+
+    .scroll-hint {
+        bottom: calc(var(--dock-height) + 22px);
+        font-size: 10px;
+    }
+
+    .scroll-arrow {
+        font-size: 24px;
+    }
+
+    .wedding-controls {
+        gap: 5px;
+        padding: 6px;
+        border-radius: 18px;
+    }
+
+    .wedding-controls button {
+        min-height: 46px;
+        padding: 7px 4px;
+        font-size: 11px;
+    }
+
+    .screen-five-message {
+        padding: 24px;
+
+        font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+
+        line-height: 1.55;
+    }
 }
 
+/* LANDSCAPE PHONES */
 
-section[hidden] {
-    display: none !important;
+@media (max-height: 620px) and (orientation: landscape) {
+
+    .scroll-hint {
+        display: none;
+    }
+
+    .wedding-controls {
+        bottom: 6px;
+    }
+
 }
 
+/* ACCESSIBILITY */
 
+@media (prefers-reduced-motion: reduce) {
 
-  </style>
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
-  <audio id="weddingMusic" loop preload="auto">
-    <source src="music/wedding-song.mp3" type="audio/mpeg">
-  </audio>
+<!-- =====================================
+     PROGRESS INDICATOR
+===================================== -->
 
-  <section id="intro">
-    <video id="introVideo1" autoplay muted loop playsinline>
-        <source src="videos/envelope-idle.mp4" type="video/mp4">
-    </video>
-
-    <video id="introVideo2" muted playsinline>
-        <source src="videos/envelope-opening.mp4" type="video/mp4">
-    </video>
-
-    <button id="sealButton" aria-label="Open invitation"></button>
-</section>
-
-
-  <!-- =====================================================
-       SCREEN 1 — INTRO
-  ====================================================== -->
-
-  <section id="screen1" class="hero">
-
-    <video
-      id="introVideo"
-      muted
-      playsinline
-      preload="auto"
-    >
-      <source src="videos/intro_clip.mp4" type="video/mp4">
-    </video>
-
-    
-<div class="scroll-hint">
-    <span>Scroll to discover</span>
-    <span class="scroll-arrow">⌄</span>
+<div class="wedding-progress" aria-hidden="true">
+    <div
+        class="wedding-progress-fill"
+        id="weddingProgressFill">
+    </div>
 </div>
 
+<!-- STATUS MESSAGE -->
 
-  </section>
+<div
+    class="wedding-status"
+    id="weddingStatus"
+    role="status"
+    aria-live="polite">
+</div>
 
+<!-- =====================================
+     NAVIGATION
+===================================== -->
 
-  <!-- =====================================================
-       SCREEN 2 — LOVE AND UNION
-  ====================================================== -->
+<nav class="wedding-controls" aria-label="Invitation navigation">
 
-  <section class="screen-two">
+    <button
+        type="button"
+        id="previousSection"
+        aria-label="Previous section">
 
-    <div class="video-screen">
+        ‹ Back
 
-      <video
-        id="clip2"
+    </button>
+
+    <button
+        type="button"
+        id="replayVideo"
+        aria-label="Replay current video">
+
+        ↻ Replay
+
+    </button>
+
+    <button
+        type="button"
+        id="nextSection"
+        class="control-primary"
+        aria-label="Next section">
+
+        Next ›
+
+    </button>
+
+</nav>
+
+<!-- =====================================
+     BACKGROUND WEDDING MUSIC
+===================================== -->
+
+<audio id="weddingMusic" loop preload="auto">
+    <source src="music/wedding-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- =====================================
+     ENVELOPE INTRO
+===================================== -->
+
+<section id="intro">
+
+    <video
+        id="introVideo1"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/envelope-idle.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <video
+        id="introVideo2"
         muted
         playsinline
         preload="auto"
-      >
-        <source src="videos/clip2.mp4" type="video/mp4">
-      </video>
+        style="display:none">
+
+        <source
+            src="videos/envelope-opening.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <button
+        id="sealButton"
+        aria-label="Open wedding invitation">
+    </button>
+
+</section>
+
+<!-- =====================================
+     SCREEN 1 - INTRO VIDEO
+===================================== -->
+
+<section id="screen1" class="hero">
+
+    <video
+        id="introVideo"
+        muted
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/intro_clip.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <div class="scroll-hint">
+        <span>Scroll to discover</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
+
+</section>
+
+<!-- =====================================
+     SCREEN 2 - LOVE AND UNION
+===================================== -->
+
+<section class="screen-two">
+
+    <div class="video-screen">
+
+        <video
+            id="clip2"
+            muted
+            playsinline
+            preload="auto">
+
+            <source
+                src="videos/clip2.mp4"
+                type="video/mp4">
+
+        </video>
 
     </div>
 
-
     <img
-      src="images/love-union.png"
-      alt="Oyndrila and Souvik"
-    >
+        src="images/love-union.png"
+        alt="Oyndrila and Souvik">
 
-    
-<div class="scroll-hint">
-    <span>Scroll to discover</span>
-    <span class="scroll-arrow">⌄</span>
-</div>
+    <div class="scroll-hint">
+        <span>Scroll to discover</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
 
-<div class="scroll-hint">
-    <span>Scroll to discover</span>
-    <span class="scroll-arrow">⌄</span>
-</div>
+</section>
 
+<!-- =====================================
+     SCREEN 3 - THE BRIDE
+===================================== -->
 
-  </section>
-
-
-  <!-- =====================================================
-       SCREEN 3 — THE BRIDE
-  ====================================================== -->
-
-  <section class="screen-three">
+<section class="screen-three">
 
     <video
-      id="brideVideo"
-      muted
-      playsinline
-      preload="auto"
-    >
-      <source src="videos/clip4.mp4" type="video/mp4">
+        id="brideVideo"
+        muted
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/clip4.mp4"
+            type="video/mp4">
+
     </video>
 
     <div class="scroll-hint">
-      <span>Scroll to discover</span>
-      <span class="scroll-arrow">⌄</span>
-  </div>
+        <span>Scroll to discover</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
 
-  </section>
+</section>
 
+<!-- =====================================
+     SCREEN 4 - THE GROOM
+===================================== -->
 
-  <!-- =====================================================
-       SCREEN 4 — THE GROOM
-  ====================================================== -->
-
-
-  <section class="screen-four">
+<section class="screen-four">
 
     <video
-      id="groomVideo"
-      muted
-      playsinline
-      preload="auto"
-    >
-      <source src="videos/clip5.mp4" type="video/mp4">
+        id="groomVideo"
+        muted
+        playsinline
+        preload="auto">
+
+        <source
+            src="videos/clip5.mp4"
+            type="video/mp4">
+
     </video>
 
     <div class="scroll-hint">
-      <span>Scroll to discover</span>
-      <span class="scroll-arrow">⌄</span>
-  </div>
+        <span>Scroll to discover</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
 
-  </section>
+</section>
 
-  
-<!-- Wedding invitation -->
+<!-- =====================================
+     SCREEN 5 - WEDDING INVITATION
+===================================== -->
 
 <section class="screen-image">
-    <img src="images/invitation_biye.jpg"
-         alt="A special moment">
+
+    <img
+        src="images/invitation_biye.jpg"
+        alt="Wedding invitation">
 
     <div class="scroll-hint">
         <span>Swipe to continue</span>
         <span class="scroll-arrow">⌄</span>
     </div>
+
 </section>
 
+<!-- =====================================
+     SCREEN 6 - CLOSING MESSAGE
+===================================== -->
 
-
-  <!-- =====================================================
-       SCREEN 5
-  ====================================================== -->
-
-  <section class="screen-five">
+<section class="screen-five">
 
     <video
-      id="clip5"
-      muted
-      playsinline
-      preload="auto"
-    >
-      <source src="videos/clip6.mp4" type="video/mp4">
-    </video>
+        id="clip5"
+        muted
+        playsinline
+        preload="auto">
 
+        <source
+            src="videos/clip6.mp4"
+            type="video/mp4">
+
+    </video>
 
     <div class="screen-five-message">
 
-      <div>
-        Join us in celebrating this auspicious occasion
-      </div>
+        <div>
+            Join us in celebrating this auspicious occasion
+        </div>
 
-      <div>
-        with our families,
-      </div>
+        <div>
+            with our families,
+        </div>
 
-      <div>
-        and shower the bride and groom
-      </div>
+        <div>
+            and shower the bride and groom
+        </div>
 
-      <div>
-        with your love and blessings
-      </div>
+        <div>
+            with your love and blessings
+        </div>
 
-      <div>
-        as they begin their journey together.
-      </div>
+        <div>
+            as they begin their journey together.
+        </div>
 
     </div>
 
-  </section>
-
-  
-
-<!-- SCREEN 6 — reception -->
-
-<section class="screen-six">
-
-    <video id="clip7" muted playsinline preload="auto">
-        <source src="videos/reception.mp4" type="video/mp4">
-    </video>
-
     <div class="scroll-hint">
-        <span>Swipe to continue</span>
+        <span>Scroll to continue</span>
         <span class="scroll-arrow">⌄</span>
     </div>
 
 </section>
 
+<!-- =====================================
+     SCREEN 7 - RECEPTION
+===================================== -->
 
+<section class="screen-six">
 
+    <video
+        id="clip7"
+        muted
+        playsinline
+        preload="auto">
 
-  <!-- =====================================================
-       ALL JAVASCRIPT
-  ====================================================== -->
+        <source
+            src="videos/reception.mp4"
+            type="video/mp4">
 
-  <script>
+    </video>
 
-const video1 = document.getElementById("introVideo1");
-const video2 = document.getElementById("introVideo2");
-const sealButton = document.getElementById("sealButton");
+    <div class="scroll-hint">
+        <span>Thank you for celebrating with us</span>
+        <span class="scroll-arrow">⌄</span>
+    </div>
+
+</section>
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+(() => {
+
+"use strict";
+
+/* =====================================
+   ELEMENTS
+===================================== */
+
+const $ = (selector, root = document) =>
+    root.querySelector(selector);
+
+const $$ = (selector, root = document) =>
+    [...root.querySelectorAll(selector)];
+
+const music = $("#weddingMusic");
+
+const introIdle = $("#introVideo1");
+const introOpen = $("#introVideo2");
+
+const sealButton = $("#sealButton");
+
+const progressFill = $("#weddingProgressFill");
+const status = $("#weddingStatus");
+
+const previousButton = $("#previousSection");
+const nextButton = $("#nextSection");
+const replayButton = $("#replayVideo");
+
+let activeIndex = 0;
+let statusTimer = null;
+let closingTimer = null;
+
+/* =====================================
+   INVITATION TYPE
+===================================== */
+
+const inviteType =
+    new URLSearchParams(location.search).get("invite");
+
+if (inviteType === "biye") {
+
+    $$(".screen-six, .screen-seven").forEach(section => {
+        section.hidden = true;
+    });
+
+}
+
+/* =====================================
+   VISIBLE SECTIONS
+===================================== */
+
+const sections = $$("body > section")
+    .filter(section => !section.hidden);
+
+/* =====================================
+   STATUS MESSAGE
+===================================== */
+
+function announce(message) {
+
+    status.textContent = message;
+
+    status.classList.add("visible");
+
+    clearTimeout(statusTimer);
+
+    statusTimer = setTimeout(() => {
+
+        status.classList.remove("visible");
+
+    }, 2500);
+
+}
+
+/* =====================================
+   SAFE VIDEO PLAYBACK
+===================================== */
+
+function safePlay(video) {
+
+    if (!video) return;
+
+    const promise = video.play();
+
+    if (promise && promise.catch) {
+
+        promise.catch(() => {
+
+            announce("Tap Replay to play the video");
+
+        });
+
+    }
+
+}
+
+/* =====================================
+   PROGRESS INDICATOR
+===================================== */
+
+function updateControls() {
+
+    const progress = sections.length > 1
+        ? (activeIndex / (sections.length - 1)) * 100
+        : 0;
+
+    progressFill.style.width = progress + "%";
+
+    previousButton.disabled = activeIndex <= 0;
+
+    nextButton.disabled =
+        activeIndex >= sections.length - 1;
+
+}
+
+/* =====================================
+   SECTION NAVIGATION
+===================================== */
+
+function goToSection(index) {
+
+    const safeIndex = Math.max(
+        0,
+        Math.min(index, sections.length - 1)
+    );
+
+    const target = sections[safeIndex];
+
+    if (!target) return;
+
+    target.scrollIntoView({
+
+        behavior: "smooth",
+        block: "start"
+
+    });
+
+    activeIndex = safeIndex;
+
+    updateControls();
+
+}
+
+previousButton.addEventListener("click", () => {
+
+    goToSection(activeIndex - 1);
+
+});
+
+nextButton.addEventListener("click", () => {
+
+    goToSection(activeIndex + 1);
+
+});
+
+/* =====================================
+   ENVELOPE OPENING
+===================================== */
 
 sealButton.addEventListener("click", () => {
 
-    // Stop the first video
-    video1.pause();
-    video1.style.display = "none";
+    introIdle.pause();
 
-    // Show and immediately play the opening animation
-    video2.style.display = "block";
-    video2.currentTime = 0;
-    video2.play();
+    introIdle.style.display = "none";
 
-    // Start wedding music
-    weddingMusic.currentTime = 0;
-    weddingMusic.play();
+    introOpen.style.display = "block";
 
-});
+    introOpen.currentTime = 0;
 
-video2.addEventListener("ended", () => {
+    safePlay(introOpen);
 
-    // Automatically scroll to Screen 1
-    document.getElementById("screen1").scrollIntoView({
-        behavior: "smooth"
-    });
+    // START MUSIC AFTER GUEST OPENS ENVELOPE
 
-});
+    if (music) {
 
-    /* =====================================================
-       SCREEN 1 — INTRO VIDEO
+        music.volume = 0.65;
 
-       Plays once.
-       Stops on final frame.
-       Replays from beginning when returning to Screen 1.
-    ====================================================== */
+        music.currentTime = 0;
 
-    const introVideo =
-      document.getElementById("introVideo");
+        music.play().catch(() => {
 
-    const hero =
-      document.querySelector(".hero");
-
-
-    const introObserver =
-      new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            introVideo.currentTime = 0;
-
-            introVideo.play().catch(() => {});
-
-          } else {
-
-            introVideo.pause();
-
-          }
+            announce("Music playback was blocked by your browser");
 
         });
 
-      }, {
-        threshold: 0.6
-      });
+    }
 
-
-    introObserver.observe(hero);
-
-
-   
-/* =====================================================
-   SCREEN 2 — LOVE AND UNION
-   Video plays automatically, then reveals the image
-===================================================== */
-
-const clip2 = document.getElementById("clip2");
-const screenTwo = document.querySelector(".screen-two");
-const videoScreen = document.querySelector(".video-screen");
-
-let screenTwoActive = false;
-
-const screenTwoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            screenTwoActive = true;
-
-            // Show the video overlay again
-            videoScreen.classList.remove("video-finished");
-
-            // Restart and play automatically
-            clip2.currentTime = 0;
-            clip2.play().catch(error => {
-                console.error("Screen 2 video could not play:", error);
-            });
-
-        } else {
-            screenTwoActive = false;
-            clip2.pause();
-        }
-    });
-}, {
-    threshold: 0.6
 });
 
-screenTwoObserver.observe(screenTwo);
+// Move to first screen after envelope animation
 
-// When the video finishes, fade it out to reveal the image
-clip2.addEventListener("ended", () => {
-    if (!screenTwoActive) return;
+introOpen.addEventListener("ended", () => {
 
-    videoScreen.classList.add("video-finished");
+    goToSection(1);
+
 });
 
-    /* =====================================================
-       SCREEN 3 — BRIDE VIDEO
-    ====================================================== */
+/* =====================================
+   CURRENT VIDEO
+===================================== */
 
-    const brideVideo =
-      document.getElementById("brideVideo");
+function getCurrentVideo() {
 
-    const screenThree =
-      document.querySelector(".screen-three");
+    const section = sections[activeIndex];
 
-    const brideFamily =
-      document.querySelector(".family-line");
+    if (!section) return null;
 
+    const videos = $$("video", section);
 
-    const brideObserver =
-      new IntersectionObserver((entries) => {
+    return videos.find(video => video.offsetParent !== null)
+        || videos[0]
+        || null;
 
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            brideVideo.currentTime = 0;
-
-            brideVideo.play().catch(() => {});
-
-            brideFamily.classList.add("show");
-
-          } else {
-
-            brideVideo.pause();
-
-          }
-
-        });
-
-      }, {
-        threshold: 0.5
-      });
-
-
-    brideObserver.observe(screenThree);
-
-
-    /* =====================================================
-       SCREEN 4 — GROOM VIDEO
-    ====================================================== */
-
-    const groomVideo =
-      document.getElementById("groomVideo");
-
-    const screenFour =
-      document.querySelector(".screen-four");
-
-
-    const groomObserver =
-      new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            groomVideo.currentTime = 0;
-
-            groomVideo.play().catch(() => {});
-
-          } else {
-
-            groomVideo.pause();
-
-          }
-
-        });
-
-      }, {
-        threshold: 0.5
-      });
-
-
-    groomObserver.observe(screenFour);
-
-
-    /* =====================================================
-       SCREEN 5
-       
-       Text stays for 5 seconds.
-       Then fades away.
-       Then video starts.
-       
-       When returning to Screen 5,
-       everything resets.
-    ====================================================== */
-
-    const clip5 =
-      document.getElementById("clip5");
-
-    const screenFive =
-      document.querySelector(".screen-five");
-
-    const screenFiveMessage =
-      document.querySelector(".screen-five-message");
-
-
-    let screenFiveActive = false;
-
-    let screenFiveTimer = null;
-
-
-    const screenFiveObserver =
-      new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            screenFiveActive = true;
-
-
-            /* Cancel previous timer */
-
-            clearTimeout(screenFiveTimer);
-
-
-            /* Reset video */
-
-            clip5.pause();
-
-            clip5.currentTime = 0;
-
-
-            /* Show text */
-
-            screenFiveMessage.style.opacity = "1";
-
-
-            /* Wait 5 seconds */
-
-            screenFiveTimer = setTimeout(() => {
-
-              if (!screenFiveActive) {
-                return;
-              }
-
-
-              /* Fade text */
-
-              screenFiveMessage.style.opacity = "0";
-
-
-              /* Start video */
-
-              clip5.play().catch(() => {});
-
-
-            }, 5000);
-
-
-          } else {
-
-            screenFiveActive = false;
-
-
-            clearTimeout(screenFiveTimer);
-
-
-            clip5.pause();
-
-          }
-
-        });
-
-      }, {
-        threshold: 0.5
-      });
-
-
-    screenFiveObserver.observe(screenFive);
-
-
-
-/* SCREEN 6 — RECEPTION VIDEO */
-
-const receptionVideo = document.getElementById("clip7");
-const screenSix = document.querySelector(".screen-six");
-
-const screenSixObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Start playing when Screen 6 appears
-            receptionVideo.currentTime = 0;
-
-            receptionVideo.play().catch(error => {
-                console.error("Reception video playback failed:", error);
-            });
-        } else {
-            // Pause when guests scroll away
-            receptionVideo.pause();
-        }
-    });
-}, {
-    threshold: 0.6
-});
-
-screenSixObserver.observe(screenSix);
-
-
-    /* =====================================================
-       TAP / CLICK ANY VIDEO TO REPLAY
-    ====================================================== */
-
-    document
-      .querySelectorAll("video")
-      .forEach(video => {
-
-        video.addEventListener("click", () => {
-
-          video.currentTime = 0;
-
-          video.play().catch(() => {});
-
-        });
-
-      });
-
-
-      
-/* INVITATION TYPE */
-
-const invitationType =
-    new URLSearchParams(window.location.search).get("invite");
-
-// Reception screens
-const receptionScreens = [
-    document.querySelector(".screen-six"),
-    document.querySelector(".screen-seven")
-].filter(Boolean);
-
-if (invitationType === "biye") {
-    receptionScreens.forEach(screen => {
-        screen.hidden = true;
-    });
-} else {
-    receptionScreens.forEach(screen => {
-        screen.hidden = false;
-    });
 }
 
+/* =====================================
+   REPLAY BUTTON
+===================================== */
 
+replayButton.addEventListener("click", () => {
 
-  </script>
-  
+    const video = getCurrentVideo();
+
+    if (!video) {
+
+        announce("No video on this screen");
+
+        return;
+
+    }
+
+    video.currentTime = 0;
+
+    safePlay(video);
+
+    announce("Replaying video");
+
+});
+
+/* =====================================
+   VIDEO OBSERVATION
+===================================== */
+
+const sectionVideos = new Map();
+
+sections.forEach(section => {
+
+    const videos = $$("video", section);
+
+    if (videos.length) {
+
+        sectionVideos.set(section, videos);
+
+    }
+
+});
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (
+            !entry.isIntersecting ||
+            entry.intersectionRatio < 0.55
+        ) {
+            return;
+        }
+
+        const section = entry.target;
+
+        activeIndex = sections.indexOf(section);
+
+        updateControls();
+
+        // PAUSE VIDEOS IN OTHER SECTIONS
+
+        sections.forEach(otherSection => {
+
+            if (otherSection === section) return;
+
+            const videos =
+                sectionVideos.get(otherSection) || [];
+
+            videos.forEach(video => video.pause());
+
+        });
+
+        // PLAY CURRENT SECTION VIDEOS
+
+        const videos =
+            sectionVideos.get(section) || [];
+
+        videos.forEach(video => {
+
+            if (
+                video === introIdle ||
+                video === introOpen
+            ) {
+                return;
+            }
+
+            // Reset love and union overlay
+
+            if (video.id === "clip2") {
+
+                $(".video-screen", section)
+                    ?.classList.remove("video-finished");
+
+            }
+
+            video.currentTime = 0;
+
+            safePlay(video);
+
+        });
+
+        // INTRO VIDEO
+
+        if (section.id === "screen1") {
+
+            const intro = $("#introVideo");
+
+            if (intro) {
+
+                intro.currentTime = 0;
+
+                safePlay(intro);
+
+            }
+
+        }
+
+    });
+
+}, {
+
+    threshold: [0.55, 0.75]
+
+});
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+/* =====================================
+   LOVE AND UNION VIDEO
+===================================== */
+
+$("#clip2").addEventListener("ended", () => {
+
+    $(".video-screen")
+        ?.classList.add("video-finished");
+
+});
+
+/* =====================================
+   CLOSING MESSAGE
+===================================== */
+
+const closingSection = $(".screen-five");
+
+const closingVideo = $("#clip5");
+
+const closingMessage =
+    $(".screen-five-message");
+
+if (closingSection && closingVideo && closingMessage) {
+
+    const closingObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                clearTimeout(closingTimer);
+
+                closingVideo.pause();
+
+                closingVideo.currentTime = 0;
+
+                closingMessage.style.opacity = "1";
+
+                // Display message for 4.5 seconds
+
+                closingTimer = setTimeout(() => {
+
+                    if (
+                        entry.target.getBoundingClientRect().top <
+                        window.innerHeight * 0.4
+                    ) {
+
+                        closingMessage.style.opacity = "0";
+
+                        safePlay(closingVideo);
+
+                    }
+
+                }, 4500);
+
+            } else {
+
+                clearTimeout(closingTimer);
+
+                closingVideo.pause();
+
+            }
+
+        });
+
+    }, {
+
+        threshold: 0.55
+
+    });
+
+    closingObserver.observe(closingSection);
+
+}
+
+/* =====================================
+   REMOVE DUPLICATE SCROLL HINTS
+===================================== */
+
+const hints = $$(".screen-two .scroll-hint");
+
+hints.slice(1).forEach(hint => hint.remove());
+
+/* =====================================
+   UPDATE PROGRESS WHEN SCROLLING
+===================================== */
+
+let scrollFrame = null;
+
+window.addEventListener("scroll", () => {
+
+    if (scrollFrame) return;
+
+    scrollFrame = requestAnimationFrame(() => {
+
+        scrollFrame = null;
+
+        const viewportCenter =
+            window.innerHeight / 2;
+
+        let nearest = 0;
+
+        let nearestDistance = Infinity;
+
+        sections.forEach((section, index) => {
+
+            const rect = section.getBoundingClientRect();
+
+            const distance = Math.abs(
+                rect.top + rect.height / 2 - viewportCenter
+            );
+
+            if (distance < nearestDistance) {
+
+                nearestDistance = distance;
+
+                nearest = index;
+
+            }
+
+        });
+
+        activeIndex = nearest;
+
+        updateControls();
+
+    });
+
+}, {
+
+    passive: true
+
+});
+
+/* =====================================
+   FINAL VIDEO AND MUSIC STOP
+===================================== */
+
+// Find the last visible section's video.
+// For invite=biye, the reception screen is hidden.
+
+const lastSection = sections[sections.length - 1];
+
+const finalVideo = lastSection
+    ? $("video", lastSection)
+    : null;
+
+if (finalVideo) {
+
+    finalVideo.addEventListener("ended", () => {
+
+        // STOP WEDDING MUSIC ONLY WHEN
+        // THE FINAL VIDEO HAS FINISHED
+
+        if (music) {
+
+            music.pause();
+
+            music.currentTime = 0;
+
+        }
+
+        announce("Thank you for celebrating with us ❤️");
+
+    });
+
+}
+
+/* =====================================
+   PAUSE VIDEOS WHEN PAGE IS HIDDEN
+===================================== */
+
+document.addEventListener("visibilitychange", () => {
+
+    if (document.hidden) {
+
+        sections.forEach(section => {
+
+            const videos =
+                sectionVideos.get(section) || [];
+
+            videos.forEach(video => video.pause());
+
+        });
+
+    }
+
+});
+
+/* =====================================
+   INITIALISE
+===================================== */
+
+updateControls();
+
+})();
+
+</script>
 
 </body>
-
 </html>
